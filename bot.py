@@ -62,11 +62,12 @@ async def check_codes():
         rewards = entry["rewards"] or "Rewards unknown"
 
         if is_new_code(code):
+            redeem_url = f"https://genshin.hoyoverse.com/en/gift?code={code}"
             await channel.send(
                 f"🎁 **New Genshin Impact Code!**\n"
                 f"**Code:** `{code}`\n"
                 f"**Rewards:** {rewards}\n"
-                f"🔗 https://genshin.hoyoverse.com/en/gift"
+                f"🔗 {redeem_url}"
             )
             mark_code_sent(code)
 
